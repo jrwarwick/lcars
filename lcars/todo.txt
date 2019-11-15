@@ -11,6 +11,11 @@ improved/options for fonts
 
 hover effect , subtle brightening of Elements. Possibly do a cool javascript RGB math instead of explicit brighter colors.
 
+sound: 
+	if we get cleared, gather from, or if not, add links and mapping recommendation to:
+		http://www.stdimension.org/int/
+		https://www.lcarscom.net/sounds/
+
 more SFX, and an ASCII codes equilance/mapping table
 
 consult sbs-ui supplemental for some inspirations
