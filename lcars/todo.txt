@@ -1,0 +1,17 @@
+a href tag styling including pseudoclasses
+
+improved/options for fonts
+
+hover effect , subtle brightening of Elements. Possibly do a cool javascript RGB math instead of explicit brighter colors.
+
+more SFX, and an ASCII codes equilance/mapping table
+
+consult sbs-ui supplemental for some inspirations
+
+SVG widgets:
+	directional control circle thing.
+	
+
+auto-magical higlighter/scroller/nonsenseinjectors for a slightly animated thing.
+
+simple cartesian graph
