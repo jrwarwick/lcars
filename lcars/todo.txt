@@ -1,6 +1,13 @@
 a href tag styling including pseudoclasses
 
 improved/options for fonts
+	https://fontlibrary.org/en/font/bebusneuebold
+	https://fontlibrary.org/en/font/bebasneueregular
+	https://github.com/wrstone/fonts-startrek
+	http://www.st-minutiae.com/resources/fonts/index.html
+	http://www.pixelsagas.com/?download=okuda
+		http://www.pixelsagas.com/?page_id=8484
+		http://www.pixelsagas.com/?p=19095
 
 hover effect , subtle brightening of Elements. Possibly do a cool javascript RGB math instead of explicit brighter colors.
 
@@ -15,3 +22,15 @@ SVG widgets:
 auto-magical higlighter/scroller/nonsenseinjectors for a slightly animated thing.
 
 simple cartesian graph
+
+
+app demos:
+	super simple clientside-only SPAs:
+		RSS reader
+			https://github.com/cgrinds/dripdripdrop
+			auto refresh, auto scroll, auto-notify on list of special alerting keywords/phrases
+			localstorage for urls, refreshperiod, and above features
+		Task list
+		BattleShip game
+			have simple passkey for each player and a special, "okay your turn is over, pass to other player now"/login screen
+			could even have this be a funky 4-player game. "quadrants" alpha beta delta gamma, 
