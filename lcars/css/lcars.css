@@ -297,7 +297,8 @@
 }
 html,
 body {
-  font-family: "arial", monospace;
+  font-family:"OSPDINDIN","SecuelaRegular","BebasNeueRegular","arial", monospace;
+  word-spacing: .30em;
   color: #fff;
 }
 h1 {
