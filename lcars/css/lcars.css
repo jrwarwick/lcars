@@ -1,3 +1,5 @@
+
+
 .lcars-gray-bg {
   background-color: rgba(34,51,85,0.467) !important;
 }
@@ -1714,3 +1716,33 @@ a.lcars-text-box.blink {
 .lcars-u-16.half {
   width: 119.875rem;
 }
+
+/*
+a{
+    text-decoration: none;
+    display: inline;
+}
+a:link{
+    color: #fc6; //lcars-golden-tanoi-color;
+    font-weight: 400;
+}
+a:visited{
+    color: #fc6; //lcars-golden-tanoi-color;
+    font-weight: normal;
+}
+a:focus{
+    color: #fc6; //lcars-golden-tanoi-color;
+    background-color: #080602;
+    font-weight: 400;
+}
+a:hover{
+    color: #fc6; //lcars-golden-tanoi-color;
+    background-color: #090703;
+    font-weight: 400;
+}
+a:active{
+    color: #ff9; //lcars-canary-color;
+    font-weight: 500;
+    background-color: #0C0806;
+}
+*/
