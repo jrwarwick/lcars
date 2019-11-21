@@ -29,14 +29,15 @@ There  is also an unofficial proposed mapping to fictional auduible UI elements.
 		<td>A transmission control character used as the first character of a heading of an information message.  </td>
 		<td>Initialized, ready for input from user.</td><td>output_soh</td><td>output_initialized</td>
 		<tr><td nowrap>ctl-B</td><td align="right">2</td><td align="right">2</td><td>STX</td><td>START OF TEXT</td>
-		<td>A transmission control character which precedes a text and  which is used
-		to terminate a heading.
-		</td>
+		    <td>A transmission control character which precedes a text and  which is used		to terminate a heading.</td>
+            <td>Communications transmission or file transfer started, normally. Content part rather than handshakes or queues  tlrbl</td><td>output_stx</td><td>output_start_transmission</td>
 		<tr><td nowrap>ctl-C</td><td align="right">3</td><td align="right">3</td><td>ETX</td><td>END OF TEXT</td>
-		<td>A transmission control character which terminates a text.</td>
+		    <td>A transmission control character which terminates a text.</td>
+            <td>Communications transmission or file transfer ended, normally.  tlrbl</td><td>output_etx</td><td>output_end_transmission</td>
 		<tr><td nowrap>ctl-D</td><td align="right">4</td><td align="right">4</td><td>EOT</td><td>END OF TRANSMISSION</td>
 		<td>A transmission control character used to indicate
-		the conclusion of the transmission of one or more texts..</td><td>Communications transmission or file transfer completed, normally.  tlrbl</td><td>output_eot</td><td>output_end_transmission</td>
+		the conclusion of the transmission of one or more texts..</td>
+            <td>meta data, silent</td><td></td><td></td>
 		<tr><td nowrap>ctl-E</td><td align="right">5</td><td align="right">5</td><td>ENQ</td><td>ENQUIRY</td>
 		<td>A transmission control character used as a request for
 			a response from a remote station; the response may include station
@@ -49,9 +50,10 @@ There  is also an unofficial proposed mapping to fictional auduible UI elements.
 		<tr><td nowrap>ctl-F</td><td align="right">6</td><td align="right">6</td><td>ACK</td><td>ACKNOWLEDGE</td>
 			<td>A transmission control character transmitted by
 			a receiver as an affirmative response to the sender.</td>
+            <td>input acknowledgement. chirpy DOsoDO.</td><td>input_ack</td><td>input_acknowledge</td>
 		<tr><td nowrap>ctl-G</td><td align="right">7</td><td align="right">7</td><td>BEL</td><td>BELL</td>
 			<td>A control character that is used when there is a need to call for attention;
-			it may control alarm or attention devices.</td><td>hard failure/access denied/warning level 1 .TeeErrErrr</td><td>output_bel</td><td>output_warn</td>
+			it may control alarm or attention devices.</td><td>hard failure/access denied/warning level 1 .TeeErrErrr</td><td>output_bel</td><td>output_error</td>
 		<tr><td nowrap>ctl-H</td><td align="right">8</td><td align="right">8</td><td>BS</td><td>BACKSPACE</td>
 			<td>A format effector which moves the active position
 			one character position backwards on the same line.</td>
@@ -61,24 +63,16 @@ There  is also an unofficial proposed mapping to fictional auduible UI elements.
 		to the next pre-determined character position
 		on the same line.</td>
 		<tr><td nowrap>ctl-J</td><td align="right">10</td><td align="right">A</td><td>LF</td><td>LINE FEED</td>
-		<td>A format effector which
-		advances the active position
-		to the same character position
+		<td>A format effector which		advances the active position		to the same character position
 		of the next line.</td>
 		<tr><td nowrap>ctl-K</td><td align="right">11</td><td align="right">B</td><td>VT</td><td>VERTICAL TABULATION</td>
-		<td>A format effector which
-		advances the active position
-		to the same character position
+		<td>A format effector which		advances the active position		to the same character position
 		on the next pre-determined line.</td>
 		<tr><td nowrap>ctl-L</td><td align="right">12</td><td align="right">C</td><td>FF</td><td>FORM FEED</td>
-		<td>A format effector which
-		advances the active position
-		to the same character position
+		<td>A format effector which		advances the active position		to the same character position
 		on a pre-determined line of the next form or page.</td> 
 		<tr><td nowrap>ctl-M</td><td align="right">13</td><td align="right">D</td><td>CR</td><td>CARRIAGE RETURN</td>
-		<td>A format effector which
-		moves the active position
-		to the first character position
+		<td>A format effector which		moves the active position		to the first character position
 		on the same line.</td>
 		<tr><td nowrap>ctl-N</td><td align="right">14</td><td align="right">E</td><td>SO</td><td>SHIFT OUT</td>
 		<td>A control character which is used in conjunction
@@ -95,12 +89,10 @@ There  is also an unofficial proposed mapping to fictional auduible UI elements.
 		described in International Standard ISO 2022.
 		</td>
 		<tr><td nowrap>ctl-P</td><td align="right">16</td><td align="right">10</td><td>DLE</td><td>DATA LINK ESCAPE</td>
-		<td>A transmission control character which will change the meaning
-		of a limited number of contiguously following characters.
-		Its is used exclusively to provide supplementary data
-		transmission control functions. Only
-		graphic characters and transmission control characters can
-		be used in DLE sequences.</td>
+            <td>A transmission control character which will change the meaning
+            of a limited number of contiguously following characters.		Its is used exclusively to provide supplementary data
+            transmission control functions. Only		graphic characters and transmission control characters can
+            be used in DLE sequences.</td>
 		<tr><td nowrap>ctl-Q</td><td align="right">17</td><td align="right">11</td><td>DC1</td><td>DEVICE CONTROL ONE</td>
 		<td>A device control character which
 		is primarily intended for turning on or starting an ancillary device.
@@ -109,31 +101,22 @@ There  is also an unofficial proposed mapping to fictional auduible UI elements.
 		device control function not provided by other DCs.
 		</td>
 		<tr><td nowrap>ctl-R</td><td align="right">18</td><td align="right">12</td><td>DC2</td><td>DEVICE CONTROL TWO</td>
-		<td>A device control character which
-		is primarily intended for turning on or starting an ancillary device.
+		<td>A device control character which		is primarily intended for turning on or starting an ancillary device.
 		If it is not required for this purpose, it may be used to set a device
-		to a special mode of operation
-		(in which case
-		DC1 is used to restore normal operation), or for any other
+		to a special mode of operation		(in which case		DC1 is used to restore normal operation), or for any other
 		device control function not provided by other DCs.
 		</td>
 		<tr><td nowrap>ctl-S</td><td align="right">19</td><td align="right">13</td><td>DC3</td><td>DEVICE CONTROL THREE</td>
-		<td>A device control character which
-		is primarily intended for turning off or
+		<td>A device control character which		is primarily intended for turning off or
 		stopping an ancillary device.
 		This function may be a secondary level stop, for example, wait, pause,
-		stand-by or halt 
-		(in which case
-		DC1 is used to restore normal operation).
-		If it is not required for this purpose, it may be used 
-		for any other
+		stand-by or halt 		(in which case		DC1 is used to restore normal operation).
+		If it is not required for this purpose, it may be used 		for any other
 		device control function not provided by other DCs.
 		<tr><td nowrap>ctl-T</td><td align="right">20</td><td align="right">14</td><td>DC4</td><td>DEVICE CONTROL FOUR</td>
-		<td>A device control character which
-		is primarily intended for turning off,
+		<td>A device control character which		is primarily intended for turning off,
 		stopping or interrupting an ancillary device.
-		If it is not required for this purpose, it may be used 
-		for any other
+		If it is not required for this purpose, it may be used 		for any other
 		device control function not provided by other DCs.
 		<tr>
 			<td nowrap>ctl-U</td><td align="right">21</td><td align="right">15</td><td>NAK</td><td>NEGATIVE ACKNOWLEDGE</td>
@@ -142,6 +125,7 @@ There  is also an unofficial proposed mapping to fictional auduible UI elements.
 		<tr><td nowrap>ctl-V</td><td align="right">22</td><td align="right">16</td><td>SYN</td><td>SYNCHRONOUS IDLE</td>
 			<td>A transmission control character used by a synchronous transmission system in the absence of any other
 			character (idle condition) to provide a signal from which synchronism may be achieved or retained between data terminal equipment.
+            <td>scrolling sound. drdrdrddddrrdddrdrdrdr</td><td>output_syn</td><td>output_synch</td>
 		<tr><td nowrap>ctl-W</td><td align="right">23</td><td align="right">17</td><td>ETB</td><td>END OF TRANSMISSION BLOCK</td>
 		<td>A transmission control character used
 		to indicate the end of a transmission block of data
@@ -171,21 +155,22 @@ There  is also an unofficial proposed mapping to fictional auduible UI elements.
 		If this character is used in hierarchical order, it delimits a data
 		item called a <i>file</i>.</td><td>big input acknowledgement. chirpy DOsoDOsososoDOsoDO.</td><td>input_ok4</td>
 		<tr><td nowrap>ctl-]</td><td align="right">29</td><td align="right">1D</td><td>GS</td><td>GROUP SEPARATOR</td>
-		<td>A control character
-		used to separate and qualify data logically; its specific meaning has to be specified for each application.
-		If this character is used in hierarchical order, it delimits a data
-		item called a <i>group</i>.</td><td>input acknowledgement. chirpy DOsoDO.</td><td>input_ok3</td>
+		<td>A control character used to separate and qualify data logically; its specific meaning has to be specified for each application.
+		If this character is used in hierarchical order, it delimits a data	item called a <i>group</i>.</td>
+            <td>?</td><td>input_ok3</td>
 		<tr><td nowrap>ctl-^</td><td align="right">30</td><td align="right">1E</td><td>RS</td><td>RECORD SEPARATOR</td>
-		<td>A control character
-		used to separate and qualify data logically; its specific meaning has to be specified for each application.
-		If this character is used in hierarchical order, it delimits a data
-		item called a <i>record</i>.</td><td>small input acknowledgement. Basic Button Beep 2, lower tone.</td><td>input_ok2</td>
+            <td>A control character
+            used to separate and qualify data logically; its specific meaning has to be specified for each application.
+            If this character is used in hierarchical order, it delimits a data
+            item called a <i>record</i>.</td>
+            <td>small input acknowledgement. Basic Button Beep 2, lower tone.</td><td>input_rs</td><td>input_accept_record</td>
 		<tr><td nowrap>ctl-_</td><td align="right">31</td><td align="right">1F</td><td>US</td><td>UNIT SEPARATOR</td>
-		<td>A control character
-		used to separate and qualify data logically; its specific meaning has to be specified for each application.
-		If this character is used in hierarchical order, it delimits a data
-		item called a <i>unit</i>.</td><td>smallest input acknowledgement. Basic Button Beep.</td><td>input_ok1</td>
-		<tr><td>&nbsp;</td><td align="right">127</td><td align="right">7F</td><td>DEL</td><td>DELETE</td><td><i><small>(not defined)</small></i></td><td>red alert</td><td>output_red_alert</td>
+            <td>A control character
+            used to separate and qualify data logically; its specific meaning has to be specified for each application.
+            If this character is used in hierarchical order, it delimits a data
+            item called a <i>unit</i>.</td>
+            <td>smallest input acknowledgement. Basic Button Beep.</td><td>input_us</td><td>input_accept_unit</td>
+		<tr><td>&nbsp;</td><td align="right">127</td><td align="right">7F</td><td>DEL</td><td>DELETE</td><td><i><small>(not defined)</small></i></td><td>red alert</td><td>output_red_alert</td><td>output_red_alert</td>
 	</tbody>
 </table>
 

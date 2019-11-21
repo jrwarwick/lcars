@@ -48,3 +48,9 @@ app demos:
 			could even have this be a funky 4-player game. "quadrants" alpha beta delta gamma, 
             https://github.com/isRuslan/battleship
             https://github.com/alexbain/battleship
+
+at end of scroll event, check to see if we should scroll just a little further to keep scrolling in grid increments 
+and avoid lines and elements from getting split, partially shown
+https://gomakethings.com/detecting-when-a-visitor-has-stopped-scrolling-with-vanilla-javascript/
+https://gomakethings.com/detecting-scroll-distances-with-vanilla-js/
+https://stackoverflow.com/questions/7035896/detect-whether-scroll-event-was-created-by-user
