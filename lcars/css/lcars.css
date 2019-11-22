@@ -339,13 +339,20 @@ h6 {
 }
 .lcars-app-container #header {
   position: fixed;
-  background-color: #000;
+  background-color: #0000; /* Transparency for more usable main content */
   width: calc(100% - 1rem);
   top: 0;
   left: 0.5rem;
   padding-top: 0.5rem;
   margin-bottom: 0.25rem;
   z-index: 1;
+}
+.lcars-app-container #blackdrop {
+  position:absolute;
+  clear:both;
+  left:0;top:0;
+  height:2.5rem; width:100%; 
+  background-color:#000;
 }
 .lcars-app-container #footer {
   position: fixed;
