@@ -514,23 +514,33 @@
 			      for (elm of document.getElementsByTagName("h3")) {
 				elm.className += " lcars-rust-color"; 
 			      }
+				audioRedAlert();
 			},
 			'cancel alert status': function() {
-			      console.log("RED ALERT!!!");
+			      console.log("Ending RED alert status.. resuming normal ops.");
 			      removeClass(document.getElementsByClassName("lcars-bar"), "lcars-tamarillo-bg"); 
 			      removeClass(document.getElementsByClassName("lcars-elbow"), "lcars-tamarillo-bg"); 
 
 			      removeClass(document.getElementsByClassName("lcars-element"), "lcars-rust-bg"); 
 
-			      removeClass(document.getElementsByTagName("h1"), "lcars-rust-bg"); 
-			      removeClass(document.getElementsByTagName("h2"), "lcars-rust-bg"); 
-			      removeClass(document.getElementsByTagName("h3"), "lcars-rust-bg"); 
+			      removeClass(document.getElementsByTagName("h1"), "lcars-rust-color"); 
+			      removeClass(document.getElementsByTagName("h2"), "lcars-rust-color"); 
+			      removeClass(document.getElementsByTagName("h3"), "lcars-rust-color"); 
 			},
 			'open hailing frequencies': function() {
-			      console.log("OPENING HAILING FREQUENCIES...");
+				console.log("OPENING HAILING FREQUENCIES...");
+				audioHail();
+			},
+			'fire proton torpedoes': function() {
+				console.log("TORPEDOES AWAY!");
+				audTngTorp.play();
+			},
+			'tea earl grey hot': function() {
+				console.log("80 degrees celsius, coming right up...");
+				audTngTea.play();
 			},
 			'eject the warp core': function() {
-				var ttsUtterance = new SpeechSynthesisUtterance("Warp core ejection request requries command Authorization.");
+				var ttsUtterance = new SpeechSynthesisUtterance("WARNING: EXTREME HAZZARD! Warp core ejection request requires executive command Authorization.");
 				ttsUtterance.voice = LCARSvoice;
 				window.speechSynthesis.speak(ttsUtterance);
 			}
@@ -539,39 +549,42 @@
 		  // Add our commands to annyang
 		  annyang.addCommands(commands);
 
-		  // Start listening. You can call this here, or attach this call to an event, button, etc.
-		  annyang.start();
-
 
 
 		annyang.addCallback('result', function(whatWasHeardArray) {
-			  console.log(whatWasHeardArray)
+			console.log((new Date).toISOString());
+			console.log(whatWasHeardArray);
 		});
+
+
+		// Start listening. You can call this here, or attach this call to an event, button, etc.
+		annyang.start();
+		console.log(annyang.isListening());
 	}
 	
 
 
-function removeClass(elements, myClass) {
+	function removeClass(elements, myClass) {
 
-	  // if there are no elements, we're done
-	  if (!elements) { return; }
+		  // if there are no elements, we're done
+		  if (!elements) { return; }
 
-	  // if we have a selector, get the chosen elements
-	  if (typeof(elements) === 'string') {
-		      elements = document.querySelectorAll(elements);
+		  // if we have a selector, get the chosen elements
+		  if (typeof(elements) === 'string') {
+			      elements = document.querySelectorAll(elements);
 		    }
 
-	  // if we have a single DOM element, make it an array to simplify behavior
-	  else if (elements.tagName) { elements=[elements]; }
+		  // if we have a single DOM element, make it an array to simplify behavior
+		  else if (elements.tagName) { elements=[elements]; }
 
-	  // create pattern to find class name
-	  var reg = new RegExp('(^| )'+myClass+'($| )','g');
+		  // create pattern to find class name
+		  var reg = new RegExp('(^| )'+myClass+'($| )','g');
 
-	  // remove class from all chosen elements
-	  for (var i=0; i<elements.length; i++) {
-	    elements[i].className = elements[i].className.replace(reg,' ');
-	      }
-	      }
+		  // remove class from all chosen elements
+		  for (var i=0; i<elements.length; i++) {
+		    elements[i].className = elements[i].className.replace(reg,' ');
+		      }
+	}
 </script>
 
 </body>

@@ -36,7 +36,10 @@ audAck   = new Audio("audio/input_ack." + audioType);
 audNak   = new Audio("audio/input_neg_ack." + audioType);
 audAlert = new Audio("audio/output_bel." + audioType);
 audReady = new Audio("audio/output_soh." + audioType);
-
+audHail  = new Audio("audio/output_dc1." + audioType);
+audRedAlert  = new Audio("audio/output_red_alert." + audioType);
+audTngTea = new Audio("audio/tng_tea." + audioType);
+audTngTorp = new Audio("audio/tng_torpedo_clean." + audioType);
 
 function audioAcknowledge() {
 	audAck.play();
@@ -57,7 +60,13 @@ function audioReady() {
 	audReady.play();
 }
 
+function audioHail() {
+	audHail.play();
+}
 
+function audioRedAlert() {
+	audRedAlert.play();
+}
 var button_list = document.querySelectorAll("#container div.lcars-element.button");
 for (var button of button_list) {
 	console.log("Audio-enabling button " + button.id + " " + button.innerText);
