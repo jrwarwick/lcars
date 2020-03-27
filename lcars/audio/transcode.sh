@@ -5,7 +5,7 @@ if [ $# -eq 0 ] ; then
     exit 0
 fi
 
-FNAMEBASE=$(echo $1 | cut -f 1 -d '.')
+FNAMEBASE=$(echo $1 | sed 's-^./--' | cut -f 1 -d '.' )
 
 if (which avconv) ; then
 	avconv -i $1 -c:a libvorbis $FNAMEBASE.webm
