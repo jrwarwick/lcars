@@ -681,6 +681,7 @@ HERE WE SEE JUSTIFIED TEXT, PER PARAGRAPH, AND NEWLINE CHARACTERS (IN THE SOURCE
 						By onclick attribute:
 						<div id="special_button" class="lcars-element rounded" onclick="lcarsAudio.TactileInputAcknowledge();">SP BTN</div>
 						<div id="disabled_button" class="lcars-element lcars-gray-bg rounded" onclick="lcarsAudio.TactileInputNegativeAcknowledge();">INACTV</div>
+						<div id="special_button" class="lcars-element lcars-atomic-tangerine-bg rounded" onclick="lcarsAudio.TactileInputAcknowledge(); if(lcarsMode.state == 'Nominal') {lcarsMode.RedAlert();} else {lcarsMode.Nominal();}">RED ALERT</div>
 					</p>
 					<p>
 						And again, by CSS class instead:
@@ -972,6 +973,7 @@ document.querySelector("#xy_ctl_up").addEventListener("click", function(){
 
 <audio id="audDummy"/><!--Just leave this here, just needed to enable automatic query canplay in the initialization code to load compatible media types -->
 <script src="js/lcars_audio.js"></script>
+<script src="js/lcars_mode.js"></script>
 
 <script>
 	//All "booted" up notification. 
