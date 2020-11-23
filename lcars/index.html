@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="css/lcars.css">
   <style>
 
-  html, body { background: black; }
+  html, body { background: black; 
+  font-family:"Arial Narrow";}
   p, h1, h2, h3 {
     margin-top: 1em;
   }
@@ -17,6 +18,32 @@
     word-wrap: break-word;
   }
 
+  .lcars-bracket{
+	      display: flex;
+		          justify-content: flex-end;
+				     align-items: flex-end;
+					         text-align: right;
+							 	color: black;
+									font-weight:bolder;
+  }
+  .lcars-bracket.left.hollow{
+	  color:white;
+      display: flex;
+	  justify-content: flex-end;
+		     align-items: flex-end;
+				 text-align: right;
+			font-weight:bolder;
+				padding-right:0;
+  }
+  .lcars-bracket.left{
+	  /* width:4em;*/
+		  padding-right:.5em;
+			  padding-bottom:.275em;
+  }
+  .lcars-bracket.left.lcars-u-1{
+	  width:7.625rem;
+	  width:9em;
+  }
   </style>
 </head>
 <body>
@@ -371,7 +398,7 @@
 				<p>
 
 				<div class="lcars-row">
-					<div class="lcars-bracket left"></div>
+					<div class="lcars-bracket left lcars-u-1">TD 123</div>
 					<div class="lcars-column">
 						<div class="lcars-element"></div>
 						<div class="lcars-element"></div>
@@ -380,7 +407,7 @@
 				</div>
 
 				<div class="lcars-row">
-					<div class="lcars-bracket left hollow"></div>
+					<div class="lcars-bracket left hollow">ABC 1</div>
 					<div class="lcars-column">
 						<div class="lcars-element"></div>
 						<div class="lcars-element"></div>
@@ -398,7 +425,7 @@
 				</div>
 
 				<div class="lcars-column lcars-u-2">
-					<div class="lcars-bracket top hollow"></div>
+					<div class="lcars-bracket top hollow"TEXT TEST></div>
 					<div class="lcars-row">
 						<div class="lcars-element"></div>
 						<div class="lcars-element"></div>
