@@ -17,6 +17,22 @@
     word-wrap: break-word;
   }
 
+.lcars-bracket{
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	color:black;
+}
+.lcars-bracket.bottom{
+	place-content: flex-end;
+    padding-right: 1.5em;
+}
+.lcars-bracket.hollow{
+	color: #FFF;
+}
+.lcars-bracket.lcars-golden-tanoi-background{
+	color: #FFF;/*clr*/
+}
   </style>
 </head>
 <body>
@@ -406,45 +422,46 @@
 						<li><span><pre class="lcars-rust-color">left</pre>: left bracket </span></li>
 						<li><span><pre class="lcars-rust-color">top</pre>: top bracket </span></li>
 						<li><span><pre class="lcars-rust-color">bottom</pre>: bottom bracket </span></li>
+						<li><span><pre class="lcars-rust-color">hollow</pre>: bracket has a hollow center</span></li>
 					</ul>
 				</p>
 				<h3>Example</h3>
 				<p>
 
 				<div class="lcars-row">
-					<div class="lcars-bracket left"></div>
+					<div class="lcars-bracket left">47</div>
 					<div class="lcars-column">
 						<div class="lcars-element"></div>
 						<div class="lcars-element"></div>
 					</div>
-					<div class="lcars-bracket right"></div>
+					<div class="lcars-bracket right">&gt;</div>
 				</div>
 
 				<div class="lcars-row">
-					<div class="lcars-bracket left hollow"></div>
+					<div class="lcars-bracket left hollow">&lt;</div>
 					<div class="lcars-column">
 						<div class="lcars-element"></div>
 						<div class="lcars-element"></div>
 					</div>
-					<div class="lcars-bracket right hollow"></div>
+					<div class="lcars-bracket right hollow">&gt;</div>
 				</div>
 
 				<div class="lcars-column lcars-u-2">
-					<div class="lcars-bracket top "></div>
+					<div class="lcars-bracket top ">THIS IS AN EXAMPLE</div>
 					<div class="lcars-row">
 						<div class="lcars-element"></div>
 						<div class="lcars-element"></div>
 					</div>
-					<div class="lcars-bracket bottom "></div>
+					<div class="lcars-bracket bottom ">4531</div>
 				</div>
 
 				<div class="lcars-column lcars-u-2">
-					<div class="lcars-bracket top hollow"></div>
+					<div class="lcars-bracket top hollow">Bracket contents description</div>
 					<div class="lcars-row">
 						<div class="lcars-element"></div>
 						<div class="lcars-element"></div>
 					</div>
-					<div class="lcars-bracket bottom hollow"></div>
+					<div class="lcars-bracket bottom hollow">TWO YELLOW BLOCKS</div>
 				</div>
 
 				</p>
